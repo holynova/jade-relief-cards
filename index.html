@@ -90,22 +90,27 @@ const DATA=[
 ];
 const app=document.getElementById('app');
 let n=0;
-app.innerHTML=DATA.map(c=>`
-<section class="cat" id="${c.id}"><h2>${c.cat}</h2><div class="sub">${c.themes.length} 个主题 · ${c.themes.length*5} 张</div>
-${c.themes.map(t=>`<div class="theme"><h3>${t.t}</h3><div class="grid">
-${t.cards.map(([f,name,rank])=>{n++;return `
-<div class="deal" style="animation-delay:${Math.min(n*18,1400)}ms">
- <div class="floaty" style="animation-delay:${(n%7)*.4}s">
-  <div class="tilt">
-   <div class="flip">
-    <div class="face back"><img loading="lazy" src="${BACK}" alt="卡背"></div>
-    <div class="face front"><img loading="lazy" src="img/${f}.webp" alt="${name}"><div class="sheen"></div></div>
-   </div>
-  </div>
-  <div class="cap"><div class="t">${name}</div><div class="r">${rank}</div></div>
- </div>
-</div>`}).join('')}
-</div></div>`).join('')}</section>`).join(''));
+function cardHTML(f,name,rank){
+  n++;
+  return '<div class="deal" style="animation-delay:'+Math.min(n*18,1400)+'ms">'
+  +'<div class="floaty" style="animation-delay:'+((n%7)*0.4)+'s">'
+  +'<div class="tilt"><div class="flip">'
+  +'<div class="face back"><img loading="lazy" src="'+BACK+'" alt="卡背"></div>'
+  +'<div class="face front"><img loading="lazy" src="img/'+f+'.webp" alt="'+name+'"><div class="sheen"></div></div>'
+  +'</div></div>'
+  +'<div class="cap"><div class="t">'+name+'</div><div class="r">'+rank+'</div></div>'
+  +'</div></div>';
+}
+function themeHTML(t){
+  return '<div class="theme"><h3>'+t.t+'</h3><div class="grid">'
+  + t.cards.map(function(c){return cardHTML(c[0],c[1],c[2]);}).join('')
+  + '</div></div>';
+}
+app.innerHTML=DATA.map(function(c){
+  return '<section class="cat" id="'+c.id+'"><h2>'+c.cat+'</h2>'
+  +'<div class="sub">'+c.themes.length+' 个主题 · '+(c.themes.length*5)+' 张</div>'
+  + c.themes.map(themeHTML).join('') + '</section>';
+}).join('');
 
 const fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
 document.querySelectorAll('.deal').forEach(d=>{
