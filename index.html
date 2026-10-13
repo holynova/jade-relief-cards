@@ -2,43 +2,69 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>玉石浮雕卡牌馆</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#0d0b08;color:#e8dcc0;font-family:"Songti SC","STSong",serif;max-width:1100px;margin:0 auto;padding:0 14px 60px}
-header{text-align:center;padding:44px 10px 20px}
-header h1{font-size:30px;letter-spacing:8px;color:#d4af37;font-weight:600}
-header p{margin-top:10px;color:#9a8a68;font-size:14px;letter-spacing:2px}
-nav{position:sticky;top:0;z-index:10;background:rgba(13,11,8,.95);backdrop-filter:blur(6px);display:flex;justify-content:center;gap:8px;padding:12px 0;border-bottom:1px solid #3a2f1c}
-nav a{color:#d4af37;text-decoration:none;font-size:15px;letter-spacing:4px;padding:8px 18px;border:1px solid #6b5426;border-radius:20px}
-nav a:active{background:#2a2113}
-.cat{margin-top:44px}
-.cat>h2{font-size:22px;letter-spacing:10px;color:#d4af37;text-align:center;margin-bottom:6px}
-.cat>.sub{color:#9a8a68;text-align:center;font-size:13px;letter-spacing:2px;margin-bottom:24px}
-.theme{margin-bottom:36px}
-.theme>h3{font-size:17px;letter-spacing:4px;color:#e8dcc0;border-left:3px solid #d4af37;padding-left:10px;margin-bottom:14px}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{background:radial-gradient(1200px 600px at 50% -100px,#1c1610 0%,#0d0b08 60%);color:#e8dcc0;font-family:"Songti SC","STSong",serif;max-width:1100px;margin:0 auto;padding:0 14px 70px;min-height:100vh}
+header{text-align:center;padding:46px 10px 18px}
+header h1{font-size:30px;letter-spacing:10px;color:#d4af37;font-weight:600;text-shadow:0 0 24px rgba(212,175,55,.35)}
+header p{margin-top:10px;color:#9a8a68;font-size:13px;letter-spacing:3px}
+.toolbar{position:sticky;top:0;z-index:20;background:rgba(13,11,8,.94);backdrop-filter:blur(8px);padding:10px 0;border-bottom:1px solid #3a2f1c}
+.toolbar .row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.toolbar .row:last-child{margin-bottom:0}
+.btn{color:#d4af37;background:transparent;border:1px solid #6b5426;border-radius:20px;font-size:13px;letter-spacing:2px;padding:7px 16px;font-family:inherit;cursor:pointer}
+.btn.on{background:#2a2113}
+.navlink{color:#d4af37;text-decoration:none;font-size:14px;letter-spacing:6px;padding:7px 20px;border:1px solid #6b5426;border-radius:20px}
+.cat{margin-top:46px;scroll-margin-top:110px}
+.cat>h2{font-size:22px;letter-spacing:12px;color:#d4af37;text-align:center;margin-bottom:6px;text-shadow:0 0 18px rgba(212,175,55,.3)}
+.cat>.sub{color:#9a8a68;text-align:center;font-size:12px;letter-spacing:2px;margin-bottom:22px}
+.theme{margin-bottom:38px}
+.theme>h3{font-size:16px;letter-spacing:4px;color:#e8dcc0;border-left:3px solid #d4af37;padding-left:10px;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 14px}
 @media(min-width:700px){.grid{grid-template-columns:repeat(5,1fr)}}
-.card{background:#161209;border:1px solid #3a2f1c;border-radius:10px;overflow:hidden}
-.card img{width:100%;display:block;aspect-ratio:3/4.6;object-fit:cover;background:#000}
-.card .cap{padding:10px 8px;text-align:center}
-.card .cap .t{font-size:14px;color:#e8dcc0;letter-spacing:1px}
-.card .cap .r{font-size:12px;color:#9a8a68;margin-top:4px;letter-spacing:2px}
-footer{text-align:center;margin-top:50px;color:#6b5f45;font-size:12px;letter-spacing:2px}
+/* ---- 3D card ---- */
+.deal{animation:deal .7s cubic-bezier(.2,.8,.3,1.1) backwards}
+@keyframes deal{from{opacity:0;transform:translateY(60px) scale(.85)}to{opacity:1;transform:none}}
+.floaty{animation:hover 5s ease-in-out infinite}
+@keyframes hover{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.tilt{perspective:900px;cursor:pointer;transition:transform .25s ease;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+.flip{position:relative;aspect-ratio:3/4.4;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.3,.7,.3,1.2)}
+.deal.flipped .flip{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;border-radius:10px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 10px 30px rgba(0,0,0,.55),0 0 0 1px #3a2f1c}
+.face img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.face.front{transform:rotateY(180deg)}
+.face.back{background:#000}
+/* 光影 */
+.face.front::after{content:"";position:absolute;inset:0;pointer-events:none;
+background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(255,240,200,.28),rgba(255,240,200,0) 55%);
+opacity:var(--sh,0);transition:opacity .3s}
+.deal.flipped .face.front::after{--sh:1}
+.sheen{position:absolute;inset:-40%;pointer-events:none;transform:rotate(18deg);
+background:linear-gradient(100deg,transparent 42%,rgba(255,244,214,.16) 50%,transparent 58%);
+animation:sheen 6s ease-in-out infinite}
+@keyframes sheen{0%,55%{transform:translateX(-70%) rotate(18deg)}90%,100%{transform:translateX(70%) rotate(18deg)}}
+.cap{text-align:center;padding:9px 4px 0}
+.cap .t{font-size:13px;letter-spacing:1px;color:#e8dcc0}
+.cap .r{font-size:11px;color:#9a8a68;margin-top:3px;letter-spacing:2px}
+.hint{text-align:center;color:#6b5f45;font-size:12px;letter-spacing:2px;margin:26px 0 6px}
+footer{text-align:center;margin-top:46px;color:#6b5f45;font-size:12px;letter-spacing:2px}
 </style>
 </head>
 <body>
 <header>
 <h1>玉石浮雕卡牌馆</h1>
-<p>3D 玉石浮雕 · 扑克牌艺术 · 共 75 张</p>
+<p>点击卡牌翻面 · 75 张玉石浮雕扑克</p>
 </header>
-<nav>
-<a href="#mingzhu">名著</a><a href="#manhua">漫画</a><a href="#youxi">游戏</a>
-</nav>
+<div class="toolbar">
+<div class="row"><a class="navlink" href="#mingzhu">名著</a><a class="navlink" href="#manhua">漫画</a><a class="navlink" href="#youxi">游戏</a></div>
+<div class="row"><button class="btn" id="flipAll">全部翻面</button><button class="btn" id="shuffle">洗牌</button></div>
+</div>
+<div class="hint">↑ 点任意一张牌翻开 / 再点扣回 ↑</div>
 <div id="app"></div>
 <footer>玉石浮雕卡牌馆 · 2026</footer>
 <script>
+const BACK="img/card-back.webp";
 const DATA=[
 {cat:"名著",id:"mingzhu",themes:[
 {t:"西游记",cards:[["xiyou-1-danaotiangong","大闹天宫","黑桃 K"],["xiyou-3-huoyanshan","火焰山借扇","方块 J"],["xiyou-4-shituxixing","师徒西行","梅花 10"],["xiyou-5-zhanerlangshen","大战二郎神","红桃 A"],["xiyou-5-renshenguo","人参果","红桃 Q"]]},
@@ -63,11 +89,59 @@ const DATA=[
 ]}
 ];
 const app=document.getElementById('app');
+let n=0;
 app.innerHTML=DATA.map(c=>`
 <section class="cat" id="${c.id}"><h2>${c.cat}</h2><div class="sub">${c.themes.length} 个主题 · ${c.themes.length*5} 张</div>
 ${c.themes.map(t=>`<div class="theme"><h3>${t.t}</h3><div class="grid">
-${t.cards.map(([f,name,rank])=>`<div class="card"><img loading="lazy" src="img/${f}.webp" alt="${name}"><div class="cap"><div class="t">${name}</div><div class="r">${rank}</div></div></div>`).join('')}
-</div></div>`).join('')}</section>`).join('');
+${t.cards.map(([f,name,rank])=>{n++;return `
+<div class="deal" style="animation-delay:${Math.min(n*18,1400)}ms">
+ <div class="floaty" style="animation-delay:${(n%7)*.4}s">
+  <div class="tilt">
+   <div class="flip">
+    <div class="face back"><img loading="lazy" src="${BACK}" alt="卡背"></div>
+    <div class="face front"><img loading="lazy" src="img/${f}.webp" alt="${name}"><div class="sheen"></div></div>
+   </div>
+  </div>
+  <div class="cap"><div class="t">${name}</div><div class="r">${rank}</div></div>
+ </div>
+</div>`}).join('')}
+</div></div>`).join('')}</section>`).join(''));
+
+const fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+document.querySelectorAll('.deal').forEach(d=>{
+  const tilt=d.querySelector('.tilt');
+  d.addEventListener('click',()=>d.classList.toggle('flipped'));
+  if(fine){
+    d.addEventListener('pointermove',e=>{
+      const r=tilt.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+      tilt.style.setProperty('--ry',(x*14)+'deg');
+      tilt.style.setProperty('--rx',(-y*14)+'deg');
+      tilt.style.setProperty('--mx',((x+.5)*100)+'%');
+      tilt.style.setProperty('--my',((y+.5)*100)+'%');
+      tilt.style.setProperty('--sh',1);
+    });
+    d.addEventListener('pointerleave',()=>{
+      tilt.style.setProperty('--rx','0deg');tilt.style.setProperty('--ry','0deg');
+      tilt.style.setProperty('--sh',0);
+    });
+  }
+});
+const flipBtn=document.getElementById('flipAll');
+let allFlipped=false;
+flipBtn.addEventListener('click',()=>{
+  allFlipped=!allFlipped;
+  document.querySelectorAll('.deal').forEach(d=>d.classList.toggle('flipped',allFlipped));
+  flipBtn.textContent=allFlipped?'全部扣回':'全部翻面';
+  flipBtn.classList.toggle('on',allFlipped);
+});
+document.getElementById('shuffle').addEventListener('click',()=>{
+  document.querySelectorAll('.grid').forEach(g=>{
+    const k=[...g.children];
+    for(let i=k.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[k[i],k[j]]=[k[j],k[i]];}
+    k.forEach((el,i)=>{el.style.animation='none';void el.offsetWidth;el.style.animation='';el.style.animationDelay=(i*60)+'ms';g.appendChild(el);});
+  });
+});
 </script>
 </body>
 </html>
