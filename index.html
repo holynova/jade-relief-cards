@@ -9,31 +9,31 @@
 body{background:radial-gradient(1200px 600px at 50% -100px,#1c1610 0%,#0d0b08 60%);color:#e8dcc0;font-family:"Songti SC","STSong","SimSun",serif;max-width:1100px;margin:0 auto;padding:0 14px 70px;min-height:100vh}
 /* ---------- header ---------- */
 header{text-align:center;padding:52px 10px 22px}
-header .kicker{font-size:11px;letter-spacing:6px;color:#8a7a58;margin-bottom:14px}
-header h1{font-size:34px;letter-spacing:12px;color:#d4af37;font-weight:600;text-shadow:0 0 26px rgba(212,175,55,.35);text-indent:12px}
-header .en{margin-top:12px;font-size:11px;letter-spacing:5px;color:#8a7a58;font-family:Georgia,serif}
+header .kicker{font-size:12px;letter-spacing:6px;color:#8a7a58;margin-bottom:14px}
+header h1{font-size:34px;letter-spacing:12px;color:#d4af37;font-weight:600;text-indent:12px}
+header .en{margin-top:12px;font-size:12px;letter-spacing:5px;color:#8a7a58;font-family:Georgia,serif}
 header .rule{display:flex;align-items:center;gap:12px;justify-content:center;margin-top:18px;color:#6b5426}
 header .rule::before,header .rule::after{content:"";height:1px;width:120px;background:linear-gradient(90deg,transparent,#6b5426)}
 header .rule::after{background:linear-gradient(90deg,#6b5426,transparent)}
 header .rule span{font-size:14px}
 /* ---------- toolbar ---------- */
-.toolbar{position:sticky;top:0;z-index:20;background:rgba(13,11,8,.94);backdrop-filter:blur(8px);padding:10px 0;border-bottom:1px solid #3a2f1c}
+.toolbar{position:sticky;top:0;z-index:20;background:rgba(13,11,8,.97);padding:10px 0;border-bottom:1px solid #3a2f1c}
 .toolbar .row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
 .toolbar .row:last-child{margin-bottom:0}
-.btn{color:#d4af37;background:transparent;border:1px solid #6b5426;border-radius:20px;font-size:13px;letter-spacing:2px;padding:7px 16px;font-family:inherit;cursor:pointer}
+.btn{color:#d4af37;background:transparent;border:1px solid #6b5426;border-radius:20px;font-size:14px;letter-spacing:2px;padding:7px 16px;font-family:inherit;cursor:pointer}
 .btn.on{background:#2a2113}
 .navlink{color:#d4af37;text-decoration:none;font-size:14px;letter-spacing:6px;padding:7px 20px;border:1px solid #6b5426;border-radius:20px;text-indent:6px}
 /* ---------- sections ---------- */
 .cat{margin-top:52px;scroll-margin-top:120px}
 .cat-head{text-align:center;margin-bottom:8px}
-.cat-head h2{font-size:24px;letter-spacing:16px;color:#d4af37;text-indent:16px;text-shadow:0 0 18px rgba(212,175,55,.3)}
+.cat-head h2{font-size:20px;letter-spacing:16px;color:#d4af37;text-indent:16px;}
 .cat-head .divider{display:flex;align-items:center;justify-content:center;gap:10px;margin:10px 0 6px;color:#6b5426;font-size:12px}
 .cat-head .divider::before,.cat-head .divider::after{content:"";height:1px;width:90px;background:linear-gradient(90deg,transparent,#6b5426)}
 .cat-head .divider::after{background:linear-gradient(90deg,#6b5426,transparent)}
 .cat-head .sub{color:#9a8a68;font-size:12px;letter-spacing:3px;margin-bottom:24px}
 .theme{margin-bottom:40px}
-.theme>h3{font-size:17px;letter-spacing:5px;color:#f0e6cc;border-left:3px solid #d4af37;padding-left:12px;margin-bottom:16px;font-weight:600}
-.theme>h3 small{font-size:11px;color:#9a8a68;letter-spacing:2px;margin-left:8px;font-weight:400}
+.theme>h3{font-size:14px;letter-spacing:5px;color:#f0e6cc;border-left:3px solid #d4af37;padding-left:12px;margin-bottom:16px;font-weight:600}
+.theme>h3 small{font-size:12px;color:#9a8a68;letter-spacing:2px;margin-left:8px;font-weight:400}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 14px}
 @media(min-width:700px){.grid{grid-template-columns:repeat(5,1fr)}}
 /* ---------- 3D card ---------- */
@@ -52,10 +52,10 @@ header .rule span{font-size:14px}
 .deal.flipped .face.front::after{--sh:1}
 .sheen{position:absolute;inset:-40%;pointer-events:none;transform:rotate(18deg);background:linear-gradient(100deg,transparent 42%,rgba(255,244,214,.16) 50%,transparent 58%);animation:sheen 6s ease-in-out infinite}
 @keyframes sheen{0%,55%{transform:translateX(-70%) rotate(18deg)}90%,100%{transform:translateX(70%) rotate(18deg)}}
-.expand{position:absolute;top:8px;right:8px;z-index:5;width:30px;height:30px;border-radius:50%;border:1px solid #d4af37;background:rgba(10,8,5,.72);color:#d4af37;font-size:15px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.expand{position:absolute;top:8px;right:8px;z-index:5;width:30px;height:30px;border-radius:50%;border:1px solid #d4af37;background:rgba(10,8,5,.72);color:#d4af37;font-size:14px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .cap{text-align:center;padding:10px 4px 0}
-.cap .t{font-size:15px;font-weight:600;letter-spacing:2px;color:#f0e6cc}
-.cap .r{font-size:13px;margin-top:5px;letter-spacing:3px;color:#9a8a68}
+.cap .t{font-size:14px;font-weight:600;letter-spacing:2px;color:#f0e6cc}
+.cap .r{font-size:14px;margin-top:5px;letter-spacing:3px;color:#9a8a68}
 .cap .r .s-bk{color:#d4af37}
 .cap .r .s-rd{color:#e0645a}
 .hint{text-align:center;color:#6b5f45;font-size:12px;letter-spacing:2px;margin:26px 0 6px;line-height:2}
@@ -72,17 +72,18 @@ footer{text-align:center;margin-top:50px;color:#6b5f45;font-size:12px;letter-spa
 .v-cap .r{font-size:14px;letter-spacing:4px;color:#9a8a68;margin-top:8px}
 .v-cap .r .s-bk{color:#d4af37}
 .v-cap .r .s-rd{color:#e0645a}
-.v-cap .i{font-size:11px;letter-spacing:3px;color:#6b5f45;margin-top:8px;font-family:Georgia,serif}
-.v-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid #6b5426;background:rgba(20,16,10,.8);color:#d4af37;font-size:22px;cursor:pointer;z-index:2}
+.v-cap .i{font-size:12px;letter-spacing:3px;color:#6b5f45;margin-top:8px;font-family:Georgia,serif}
+.v-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid #6b5426;background:rgba(20,16,10,.8);color:#d4af37;font-size:20px;cursor:pointer;z-index:2}
 #vPrev{left:12px}
 #vNext{right:12px}
 #vClose{position:absolute;top:16px;right:16px;width:42px;height:42px;border-radius:50%;border:1px solid #6b5426;background:rgba(20,16,10,.8);color:#d4af37;font-size:20px;cursor:pointer;z-index:2}
-.v-hint{position:absolute;bottom:18px;width:100%;text-align:center;color:#6b5f45;font-size:11px;letter-spacing:2px}
+.v-hint{position:absolute;bottom:18px;width:100%;text-align:center;color:#6b5f45;font-size:12px;letter-spacing:2px}
+@media(max-width:700px){.v-flip{width:min(72vw,330px)}}
 </style>
 </head>
 <body>
 <header>
-<div class="kicker">3D 玉石浮雕 · 扑克牌艺术</div>
+<div class="kicker">3D 玉石浮雕扑克牌艺术</div>
 <h1>玉石浮雕卡牌馆</h1>
 <div class="en">JADE RELIEF PLAYING CARDS</div>
 <div class="rule"><span>❖</span></div>
@@ -91,9 +92,9 @@ footer{text-align:center;margin-top:50px;color:#6b5f45;font-size:12px;letter-spa
 <div class="row"><a class="navlink" href="#mingzhu">名著</a><a class="navlink" href="#manhua">漫画</a><a class="navlink" href="#youxi">游戏</a><a class="navlink" href="#tebie">特别</a></div>
 <div class="row"><button class="btn" id="flipAll">全部翻面</button><button class="btn" id="shuffle">洗牌</button></div>
 </div>
-<div class="hint">点牌翻面 · 点右上角 ⤢ 全屏看牌<br>← → 切换 · ESC 关闭</div>
+<div class="hint">点牌翻面，点右上角 ⤢ 全屏看牌<br>← → 切换，ESC 关闭</div>
 <div id="app"></div>
-<footer>玉石浮雕卡牌馆 · 2026<br>JADE RELIEF PLAYING CARDS</footer>
+<footer>玉石浮雕卡牌馆 2026</footer>
 
 <div id="viewer">
 <button id="vClose">×</button>
@@ -106,7 +107,7 @@ footer{text-align:center;margin-top:50px;color:#6b5f45;font-size:12px;letter-spa
 <div class="v-cap"><div class="t" id="vT"></div><div class="r" id="vR"></div><div class="i" id="vI"></div></div>
 </div>
 <button class="v-btn" id="vNext">›</button>
-<div class="v-hint">点卡片翻面 · ← → 切换 · ESC 关闭</div>
+<div class="v-hint">点卡片翻面，← → 切换，ESC 关闭</div>
 </div>
 
 <script>
@@ -174,7 +175,7 @@ function themeHTML(t){
 app.innerHTML=DATA.map(function(c){
   return '<section class="cat" id="'+c.id+'"><div class="cat-head"><h2>'+c.cat+'</h2>'
   +'<div class="divider">❖</div>'
-  +'<div class="sub">'+c.themes.length+' 个主题 · '+(c.themes.reduce(function(s,t){return s+t.cards.length;},0))+' 张</div></div>'
+  +'<div class="sub">'+c.themes.length+' 个主题，'+(c.themes.reduce(function(s,t){return s+t.cards.length;},0))+' 张</div></div>'
   + c.themes.map(themeHTML).join('') + '</section>';
 }).join('');
 
@@ -206,11 +207,13 @@ for(var i=0;i<deals.length;i++){
     ex.addEventListener('click',function(e){e.stopPropagation();openViewer(parseInt(ex.getAttribute('data-i'),10));});
   })(deals[i]);
 }
+/* 首屏先翻开第一个主题的 5 张牌, 让新手一进来就看到画, 其余仍可点牌翻面 */
+for(var f=0;f<5&&f<deals.length;f++) deals[f].classList.add('flipped');
 var flipBtn=document.getElementById('flipAll'), allFlipped=false;
 flipBtn.addEventListener('click',function(){
   allFlipped=!allFlipped;
   for(var i=0;i<deals.length;i++) deals[i].classList.toggle('flipped',allFlipped);
-  flipBtn.textContent=allFlipped?'全部扣回':'全部翻面';
+  flipBtn.textContent=allFlipped?'全部翻回':'全部翻面';
   flipBtn.classList.toggle('on',allFlipped);
 });
 document.getElementById('shuffle').addEventListener('click',function(){
@@ -243,7 +246,7 @@ function showCard(i){
   vFront.alt=c.name;
   vT.textContent=c.name;
   vR.innerHTML=rankHTML(c.rank);
-  vI.textContent=(vIdx+1)+' / '+CARDS.length;
+  vI.textContent='第 '+(vIdx+1)+' 张 / 共 '+CARDS.length+' 张';
   if(vTimer) clearTimeout(vTimer);
   vTimer=setTimeout(function(){viewer.classList.add('flipped');},280);
 }
