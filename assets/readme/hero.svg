@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200" height="360" viewBox="0 0 1200 360"
+     role="img" aria-labelledby="title desc">
+  <title id="title">玉石浮雕卡牌馆 — 名著 / 漫画 / 游戏 108 张</title>
+  <desc id="desc">暖黑底标题：玉石浮雕卡牌馆，名著漫画游戏一副 108 张的玉石牌；右侧是三张扇形展开的玉石扑克牌，黑桃 K、红桃 A、方块 Q，牌面中央各有一枚玉璧。</desc>
+
+  <rect width="1200" height="360" rx="26" fill="#12100c"/>
+
+  <g id="title-block" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    <text x="56" y="62" font-size="19" letter-spacing="3" fill="#a89a7a">JADE RELIEF PLAYING CARDS · 3D 玉石浮雕</text>
+    <text x="56" y="128" font-size="62" font-weight="700" fill="#d8b45a">玉石浮雕卡牌馆</text>
+    <text x="56" y="168" font-size="23" fill="#ede3d3">名著 / 漫画 / 游戏，一副 108 张的玉石牌</text>
+    <text x="56" y="204" font-size="19" fill="#a89a7a">3 类 × 7 主题 × 5 张 + 王牌珍藏 3 张，每张都是浮雕。</text>
+    <g id="chips" font-size="18" fill="#ede3d3" text-anchor="middle">
+      <g><rect x="56" y="238" width="110" height="36" rx="18" fill="#221e14" stroke="#4a3f2c" stroke-width="1.5"/><text x="111" y="262">108 张</text></g>
+      <g><rect x="178" y="238" width="130" height="36" rx="18" fill="#221e14" stroke="#4a3f2c" stroke-width="1.5"/><text x="243" y="262">21 个主题</text></g>
+      <g><rect x="320" y="238" width="110" height="36" rx="18" fill="#221e14" stroke="#4a3f2c" stroke-width="1.5"/><text x="375" y="262">3D 翻牌</text></g>
+      <g><rect x="442" y="238" width="100" height="36" rx="18" fill="#221e14" stroke="#4a3f2c" stroke-width="1.5"/><text x="492" y="262">可洗牌</text></g>
+    </g>
+    <text x="56" y="316" font-size="17" fill="#a89a7a">点牌翻面 · 悬停倾斜 · 全屏看牌</text>
+  </g>
+
+  <text id="cards-caption" x="970" y="344" font-size="18" fill="#a89a7a" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">一副牌，108 个故事</text>
+
+  <g id="fan" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    <!-- 左：黑桃 K -->
+    <g transform="rotate(-12 865 165)">
+      <rect x="800" y="70" width="130" height="190" rx="12" fill="#1d2b23" stroke="#d8b45a" stroke-width="2"/>
+      <rect x="808" y="78" width="114" height="174" rx="8" fill="none" stroke="#d8b45a" stroke-width="1" opacity="0.5"/>
+      <text x="818" y="106" font-size="22" font-weight="700" fill="#d8b45a">K</text>
+      <text x="818" y="132" font-size="22" fill="#ede3d3">♠</text>
+      <circle cx="865" cy="180" r="28" fill="none" stroke="#7fb89a" stroke-width="9"/>
+      <circle cx="865" cy="180" r="6" fill="#7fb89a"/>
+      <text x="852" y="232" font-size="17" fill="#a89a7a" text-anchor="middle">大闹天宫</text>
+    </g>
+    <!-- 右：方块 Q -->
+    <g transform="rotate(12 1075 165)">
+      <rect x="1010" y="70" width="130" height="190" rx="12" fill="#1d2b23" stroke="#d8b45a" stroke-width="2"/>
+      <rect x="1018" y="78" width="114" height="174" rx="8" fill="none" stroke="#d8b45a" stroke-width="1" opacity="0.5"/>
+      <text x="1028" y="106" font-size="22" font-weight="700" fill="#d8b45a">Q</text>
+      <text x="1028" y="132" font-size="22" fill="#e88a8a">♦</text>
+      <circle cx="1075" cy="180" r="28" fill="none" stroke="#7fb89a" stroke-width="9"/>
+      <circle cx="1075" cy="180" r="6" fill="#7fb89a"/>
+      <text x="1088" y="232" font-size="17" fill="#a89a7a" text-anchor="middle">草船借箭</text>
+    </g>
+    <!-- 中：红桃 A -->
+    <g>
+      <rect x="905" y="55" width="130" height="190" rx="12" fill="#22382c" stroke="#d8b45a" stroke-width="2.5"/>
+      <rect x="913" y="63" width="114" height="174" rx="8" fill="none" stroke="#d8b45a" stroke-width="1" opacity="0.5"/>
+      <text x="923" y="91" font-size="22" font-weight="700" fill="#d8b45a">A</text>
+      <text x="923" y="117" font-size="22" fill="#e88a8a">♥</text>
+      <circle cx="970" cy="165" r="28" fill="none" stroke="#7fb89a" stroke-width="9"/>
+      <circle cx="970" cy="165" r="6" fill="#7fb89a"/>
+      <text x="970" y="225" font-size="17" fill="#a89a7a" text-anchor="middle">大战二郎神</text>
+    </g>
+  </g>
+</svg>
